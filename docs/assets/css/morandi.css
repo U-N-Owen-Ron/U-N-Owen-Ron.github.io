@@ -1,0 +1,133 @@
+:root {
+  --md-primary-fg-color: #9dab96;
+  --md-primary-fg-color--light: #c3cdbd;
+  --md-primary-fg-color--dark: #7d8a75;
+  --md-accent-fg-color: #b3a8c4;
+  --md-accent-fg-color--transparent: rgba(179, 168, 196, .18);
+}
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #f6f2ec;
+  --md-default-fg-color: #4e4a43;
+  --md-default-fg-color--light: #6b665c;
+  --md-default-fg-color--lighter: #8a857b;
+  --md-typeset-a-color: #8b9d81;
+  --md-code-bg-color: #efe9df;
+  --md-code-fg-color: #5c584f;
+  --md-footer-bg-color: #7d8a75;
+  --md-footer-bg-color--dark: #6a7665;
+}
+
+.md-header,
+.md-tabs {
+  background-color: #9dab96;
+}
+.md-header__title {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  margin-top: 10px;
+}
+.md-header__inner .md-search {
+  margin-top: 10px;
+  height: 36px;
+}
+.md-tabs__link {
+  color: #fff;
+}
+
+.md-tabs .md-grid {
+  position: relative;
+}
+.zju-badge {
+  position: absolute;
+  right: 1.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, .92);
+  font-size: .8rem;
+  letter-spacing: .1em;
+}
+.zju-badge:hover {
+  color: #fff;
+}
+.zju-badge svg,
+.zju-badge img.zju-logo,
+.hero-logo {
+  border-radius: 50%;
+  box-shadow: 0 1px 5px rgba(110, 100, 80, .35);
+  filter: saturate(.62) brightness(1.02) contrast(.92);
+}
+.zju-badge svg,
+.zju-badge img.zju-logo {
+  width: 26px;
+  height: 26px;
+}
+.hero-logo {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.1rem;
+  display: block;
+}
+@media (max-width: 1219px) {
+  .zju-badge {
+    display: none;
+  }
+}
+
+.md-tabs__link[href="."] {
+  font-weight: 700;
+}
+.md-tabs__link[href="."] svg {
+  width: 1.6em;
+  height: 1.6em;
+  vertical-align: -0.38em;
+}
+
+.md-nav__link {
+  font-size: .95rem;
+}
+.md-nav__item--active > .md-nav__link,
+.md-nav__link.md-nav__link--active {
+  color: #7d8a75;
+  font-weight: 600;
+}
+.md-nav__link--active {
+  color: #7d8a75 !important;
+  font-weight: 600;
+}
+.md-nav__item--active > .md-nav__link {
+  color: #7d8a75 !important;
+}
+.md-nav__link:hover {
+  color: #a08c6c;
+}
+
+.md-typeset a {
+  display: inline-block;
+  transform-origin: left center;
+  transition: color .2s ease, transform .2s ease, font-weight .2s ease;
+}
+.md-typeset a:hover {
+  color: #a08c6c;
+  font-weight: 700;
+  transform: scale(1.1);
+}
+.md-typeset a:active {
+  color: #7d8a75;
+}
+.md-typeset ul li {
+  padding-left: .35em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+}
