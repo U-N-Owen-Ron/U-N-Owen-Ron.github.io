@@ -202,6 +202,22 @@ icon: material/home
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-0.12em); }
   }
+  .hero .site-title-en::after,
+  .hero .site-title-cn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .5), transparent);
+    animation: title-shine 4s ease-in-out infinite;
+    animation-delay: 1.2s;
+  }
+  @keyframes title-shine {
+    0% { left: -60%; }
+    60%, 100% { left: 130%; }
+  }
 
   .hero .interact {
     display: flex;
@@ -372,6 +388,8 @@ icon: material/home
     .hero .site-title { transition: none; }
     .hero .site-title-en,
     .hero .site-title-cn { animation: none; }
+    .hero .site-title-en::after,
+    .hero .site-title-cn::after { display: none; }
     .blob { animation: none; }
   }
 </style>
