@@ -27,7 +27,7 @@
       <rect width="160" height="160" filter="url(#f)"/>
     </pattern>
   </defs>
-  <rect width="1920" height="1080" fill="#1d1b18"/>
+  <rect width="1920" height="1080" fill="#000000"/>
   <rect width="1920" height="1080" fill="url(#g1)"/>
   <rect width="1920" height="1080" fill="url(#g2)"/>
   <rect width="1920" height="1080" fill="url(#g3)"/>

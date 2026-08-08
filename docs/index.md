@@ -195,8 +195,8 @@ icon: material/home
   [data-md-color-scheme="slate"] .hero .subtitle,
   [data-md-color-scheme="slate"] .hero .stats { color: #b3ac9e; }
   [data-md-color-scheme="slate"] .hero .card {
-    background: rgba(42, 39, 35, .82);
-    border-color: #4a453d;
+    background: rgba(16, 16, 16, .85);
+    border-color: #2a2a2a;
     color: #b3ac9e;
   }
   [data-md-color-scheme="slate"] .hero .card .name { color: #e6e0d4; }
@@ -204,16 +204,16 @@ icon: material/home
   [data-md-color-scheme="slate"] .hero .like-btn,
   [data-md-color-scheme="slate"] .hero .danmaku-form input,
   [data-md-color-scheme="slate"] .hero .danmaku-form button {
-    background: rgba(42, 39, 35, .82);
-    border-color: #4a453d;
+    background: rgba(16, 16, 16, .85);
+    border-color: #2a2a2a;
     color: #b3ac9e;
   }
   [data-md-color-scheme="slate"] .hero .danmaku-form input { color: #e6e0d4; }
-  [data-md-color-scheme="slate"] .wave.wave-back svg path { fill: #33302b; }
-  [data-md-color-scheme="slate"] .wave.wave-front svg path { fill: #1d1b18; }
+  [data-md-color-scheme="slate"] .wave.wave-back svg path { fill: #191919; }
+  [data-md-color-scheme="slate"] .wave.wave-front svg path { fill: #000000; }
   [data-md-color-scheme="slate"] .danmaku-item {
     color: #cfc9bd;
-    background: rgba(42, 39, 35, .92);
+    background: rgba(12, 12, 12, .95);
     box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
   }
   [data-md-color-scheme="slate"] .comments h2 { color: #e6e0d4; }
