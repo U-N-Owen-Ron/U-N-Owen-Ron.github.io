@@ -342,24 +342,26 @@ icon: material/home
   .wave {
     position: relative;
     pointer-events: none;
+    width: 100vw;
+    left: calc(50% - 50vw);
   }
   .wave svg {
     display: block;
     width: 100%;
   }
   .wave.wave-back {
-    margin-top: -42px;
+    margin-top: calc(-1 * clamp(30px, 4vw, 56px));
     z-index: 1;
   }
   .wave.wave-back svg {
-    height: 80px;
+    height: clamp(40px, 6.5vw, 88px);
   }
   .wave.wave-front {
-    margin-top: -26px;
+    margin-top: calc(-1 * clamp(18px, 2.6vw, 36px));
     z-index: 2;
   }
   .wave.wave-front svg {
-    height: 56px;
+    height: clamp(28px, 4.5vw, 60px);
   }
   .easter-msg {
     position: fixed;
