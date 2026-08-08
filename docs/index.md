@@ -189,34 +189,6 @@ icon: material/home
     animation-delay: calc(0.15s + var(--i) * 0.09s);
     transition: transform .3s ease;
   }
-  [data-md-color-scheme="slate"] .hero .site-title-en,
-  [data-md-color-scheme="slate"] .hero .site-title-cn { color: #e6e0d4; }
-  [data-md-color-scheme="slate"] .hero .eyebrow,
-  [data-md-color-scheme="slate"] .hero .subtitle,
-  [data-md-color-scheme="slate"] .hero .stats { color: #b3ac9e; }
-  [data-md-color-scheme="slate"] .hero .card {
-    background: rgba(16, 16, 16, .85);
-    border-color: #2a2a2a;
-    color: #b3ac9e;
-  }
-  [data-md-color-scheme="slate"] .hero .card .name { color: #e6e0d4; }
-  [data-md-color-scheme="slate"] .hero .card .desc { color: #8f887c; }
-  [data-md-color-scheme="slate"] .hero .like-btn,
-  [data-md-color-scheme="slate"] .hero .danmaku-form input,
-  [data-md-color-scheme="slate"] .hero .danmaku-form button {
-    background: rgba(16, 16, 16, .85);
-    border-color: #2a2a2a;
-    color: #b3ac9e;
-  }
-  [data-md-color-scheme="slate"] .hero .danmaku-form input { color: #e6e0d4; }
-  [data-md-color-scheme="slate"] .wave.wave-back svg path { fill: #191919; }
-  [data-md-color-scheme="slate"] .wave.wave-front svg path { fill: #000000; }
-  [data-md-color-scheme="slate"] .danmaku-item {
-    color: #cfc9bd;
-    background: rgba(12, 12, 12, .95);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
-  }
-  [data-md-color-scheme="slate"] .comments h2 { color: #e6e0d4; }
   @keyframes char-in {
     from { opacity: 0; transform: translateY(0.6em); }
     to { opacity: 1; transform: translateY(0); }
@@ -516,7 +488,7 @@ icon: material/home
   data-reactions-enabled="1"
   data-emit-metadata="0"
   data-input-position="top"
-  data-theme="preferred_color_scheme"
+  data-theme="light"
   data-lang="zh-CN"
   crossorigin="anonymous"
   async>
@@ -712,7 +684,7 @@ icon: material/home
     return;
   }
   cards.forEach(function (c, i) { c.classList.add('reveal'); c.style.transitionDelay = (i * 90) + 'ms'; });
-  var io = new IntersectionObserver(function (entries) {
+  var   io = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) {
       if (en.isIntersecting) {
         en.target.classList.add('in');
@@ -721,25 +693,5 @@ icon: material/home
     });
   }, { threshold: 0.15 });
   cards.forEach(function (c) { io.observe(c); });
-})();
-
-(function () {
-  var applyGiscusTheme = function () {
-    var scheme = document.body.getAttribute('data-md-color-scheme');
-    var theme = scheme === 'slate' ? 'dark' : 'light';
-    var frame = document.querySelector('iframe.giscus-frame');
-    if (frame && frame.contentWindow) {
-      frame.contentWindow.postMessage({
-        giscus: { setConfig: { theme: theme } }
-      }, 'https://giscus.app');
-    }
-  };
-  if (window.MutationObserver) {
-    var mo = new MutationObserver(function () {
-      applyGiscusTheme();
-    });
-    mo.observe(document.body, { attributes: true, attributeFilter: ['data-md-color-scheme'] });
-  }
-  window.addEventListener('load', applyGiscusTheme);
 })();
 </script>
