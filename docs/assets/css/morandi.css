@@ -18,9 +18,58 @@
   --md-footer-bg-color--dark: #6a7665;
 }
 
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #1d1b18;
+  --md-default-fg-color: #cfc9bd;
+  --md-default-fg-color--light: #b3ac9e;
+  --md-default-fg-color--lighter: #8f887c;
+  --md-typeset-a-color: #a9bd9e;
+  --md-code-bg-color: #2a2723;
+  --md-code-fg-color: #cfc9bd;
+  --md-footer-bg-color: #2c2a26;
+  --md-footer-bg-color--dark: #24221f;
+  --md-typeset-table-color: #3a362f;
+}
+
+body {
+  overflow-x: hidden;
+  background-image: url("../images/background.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+[data-md-color-scheme="slate"] body {
+  background-image: url("../images/background-dark.svg");
+}
+
 .md-header,
 .md-tabs {
-  background-color: #9dab96;
+  background-color: rgba(157, 171, 150, .86);
+  backdrop-filter: blur(10px);
+}
+
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: rgba(38, 36, 32, .88);
+}
+
+.md-main {
+  background-color: transparent;
+}
+
+.md-content__inner,
+.md-content__inner > * {
+  background-color: transparent;
+}
+
+.md-grid {
+  max-width: 84rem;
+}
+
+.md-content {
+  background-color: transparent;
 }
 .md-header__title {
   color: #fff;

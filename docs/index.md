@@ -172,6 +172,15 @@ icon: material/home
     color: #a0988c;
     margin: 0;
   }
+  .hero .card.reveal {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  .hero .card.reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .55s ease, transform .55s ease, box-shadow .25s ease, border-color .25s ease;
+  }
 
   .hero .char {
     display: inline-block;
@@ -180,6 +189,34 @@ icon: material/home
     animation-delay: calc(0.15s + var(--i) * 0.09s);
     transition: transform .3s ease;
   }
+  [data-md-color-scheme="slate"] .hero .site-title-en,
+  [data-md-color-scheme="slate"] .hero .site-title-cn { color: #e6e0d4; }
+  [data-md-color-scheme="slate"] .hero .eyebrow,
+  [data-md-color-scheme="slate"] .hero .subtitle,
+  [data-md-color-scheme="slate"] .hero .stats { color: #b3ac9e; }
+  [data-md-color-scheme="slate"] .hero .card {
+    background: rgba(42, 39, 35, .82);
+    border-color: #4a453d;
+    color: #b3ac9e;
+  }
+  [data-md-color-scheme="slate"] .hero .card .name { color: #e6e0d4; }
+  [data-md-color-scheme="slate"] .hero .card .desc { color: #8f887c; }
+  [data-md-color-scheme="slate"] .hero .like-btn,
+  [data-md-color-scheme="slate"] .hero .danmaku-form input,
+  [data-md-color-scheme="slate"] .hero .danmaku-form button {
+    background: rgba(42, 39, 35, .82);
+    border-color: #4a453d;
+    color: #b3ac9e;
+  }
+  [data-md-color-scheme="slate"] .hero .danmaku-form input { color: #e6e0d4; }
+  [data-md-color-scheme="slate"] .wave.wave-back svg path { fill: #33302b; }
+  [data-md-color-scheme="slate"] .wave.wave-front svg path { fill: #1d1b18; }
+  [data-md-color-scheme="slate"] .danmaku-item {
+    color: #cfc9bd;
+    background: rgba(42, 39, 35, .92);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+  }
+  [data-md-color-scheme="slate"] .comments h2 { color: #e6e0d4; }
   @keyframes char-in {
     from { opacity: 0; transform: translateY(0.6em); }
     to { opacity: 1; transform: translateY(0); }
@@ -468,13 +505,12 @@ icon: material/home
   <div class="giscus"></div>
 </div>
 
-<!-- 留言板配置：把下方 4 处 YOUR_ 开头的占位符换成你 GitHub 仓库的真实 ID 后即可生效
-     （需要：仓库开启 Discussions、站点部署到 GitHub Pages） -->
+<!-- 留言板配置：需要仓库开启 Discussions、安装 giscus App 后才会显示 -->
 <script src="https://giscus.app/client.js"
-  data-repo="YOUR_USERNAME/YOUR_REPO"
-  data-repo-id="YOUR_REPO_ID"
-  data-category="YOUR_CATEGORY"
-  data-category-id="YOUR_CATEGORY_ID"
+  data-repo="U-N-Owen-Ron/U-N-Owen-Ron.github.io"
+  data-repo-id="R_kgDOTyQ73Q"
+  data-category="General"
+  data-category-id="DISCUSSION_CATEGORY_ID"
   data-mapping="pathname"
   data-strict="0"
   data-reactions-enabled="1"
@@ -666,5 +702,44 @@ icon: material/home
     };
     loop();
   }
+})();
+
+(function () {
+  var cards = document.querySelectorAll('.hero .card');
+  if (!cards.length) return;
+  if (!('IntersectionObserver' in window)) {
+    cards.forEach(function (c) { c.classList.add('in'); });
+    return;
+  }
+  cards.forEach(function (c, i) { c.classList.add('reveal'); c.style.transitionDelay = (i * 90) + 'ms'; });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) {
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  cards.forEach(function (c) { io.observe(c); });
+})();
+
+(function () {
+  var applyGiscusTheme = function () {
+    var scheme = document.body.getAttribute('data-md-color-scheme');
+    var theme = scheme === 'slate' ? 'dark' : 'light';
+    var frame = document.querySelector('iframe.giscus-frame');
+    if (frame && frame.contentWindow) {
+      frame.contentWindow.postMessage({
+        giscus: { setConfig: { theme: theme } }
+      }, 'https://giscus.app');
+    }
+  };
+  if (window.MutationObserver) {
+    var mo = new MutationObserver(function () {
+      applyGiscusTheme();
+    });
+    mo.observe(document.body, { attributes: true, attributeFilter: ['data-md-color-scheme'] });
+  }
+  window.addEventListener('load', applyGiscusTheme);
 })();
 </script>
