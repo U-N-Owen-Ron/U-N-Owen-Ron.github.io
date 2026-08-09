@@ -140,3 +140,25 @@ html {
 body {
   overflow-x: hidden;
 }
+
+.md-nav__item--nested > .md-nav > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-size: .85rem;
+}
+
+.md-nav__link[href]:hover,
+.md-nav__link[for]:hover,
+.md-nav__link[href]:focus,
+.md-nav__link[for]:focus {
+  color: #a08c6c;
+}
+
+.md-nav--primary .md-nav__item--active > .md-nav__link:hover,
+.md-nav--primary .md-nav__item--active > .md-nav__link:focus {
+  color: #a08c6c;
+}
+
+.md-nav--lifted > .md-nav__list > .md-nav__item--active > .md-nav__link {
+  background: transparent;
+  box-shadow: none;
+  position: static;
+}
