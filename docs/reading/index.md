@@ -9,3 +9,4 @@ icon: material/book-open-page-variant
 ## 文章列表
 
 - [示例文章：我的读书笔记模板](example.md)
+- [《置身事内》书摘](zhishenshinei.md)
