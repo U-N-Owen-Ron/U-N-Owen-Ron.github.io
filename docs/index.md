@@ -23,15 +23,13 @@ icon: material/home
   .blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: .55;
     pointer-events: none;
     z-index: 0;
   }
   .blob-1 {
     width: 440px;
     height: 440px;
-    background: #c9adb0;
+    background: radial-gradient(circle, rgba(201, 173, 176, .55), rgba(201, 173, 176, 0) 70%);
     top: -90px;
     left: -110px;
     animation: blob-drift1 14s ease-in-out infinite;
@@ -39,7 +37,7 @@ icon: material/home
   .blob-2 {
     width: 380px;
     height: 380px;
-    background: #a9b8a3;
+    background: radial-gradient(circle, rgba(169, 184, 163, .5), rgba(169, 184, 163, 0) 70%);
     bottom: -70px;
     right: -90px;
     animation: blob-drift2 17s ease-in-out infinite;
@@ -47,7 +45,7 @@ icon: material/home
   .blob-3 {
     width: 320px;
     height: 320px;
-    background: #b9b0cb;
+    background: radial-gradient(circle, rgba(185, 176, 203, .5), rgba(185, 176, 203, 0) 70%);
     top: 38%;
     left: 62%;
     animation: blob-drift3 20s ease-in-out infinite;
@@ -55,7 +53,7 @@ icon: material/home
   .blob-4 {
     width: 260px;
     height: 260px;
-    background: #c2b7a4;
+    background: radial-gradient(circle, rgba(194, 183, 164, .45), rgba(194, 183, 164, 0) 70%);
     top: 10%;
     left: 72%;
     animation: blob-drift4 23s ease-in-out infinite;
