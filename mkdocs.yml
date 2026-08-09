@@ -6,6 +6,7 @@ theme:
   language: zh
   features:
     - navigation.tabs
+    - navigation.indexes
     - toc.integrate
   palette:
     scheme: default
@@ -23,7 +24,7 @@ nav:
   - 娱乐: fun/index.md
   - 音乐: music/index.md
   - 阅读: 
-    - reading/index.md 
-    - zhishenshinei: reading/zhishenshinei.md
+    - 首页: reading/index.md 
+    - 置身事内: reading/zhishenshinei.md
   - 友链: friends/index.md
   - 关于: about/index.md
