@@ -12,7 +12,7 @@ theme:
     scheme: default
 
 extra_css:
-  - assets/css/morandi.css
+  - assets/css/morandi.css?v=2
 
 extra_javascript:
   - assets/js/zju.js
